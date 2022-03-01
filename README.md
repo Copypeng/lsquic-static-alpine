@@ -6,7 +6,7 @@
 
 LSQUIC uses [BoringSSL](https://github.com/google/boringssl), which is licensed under `LICENSE.boringssl`.
 
-## Updating
+##how to update
 
 1. Update the commit IDs in `env.sh`
 2. Make a PR and test with the CI artifact
