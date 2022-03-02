@@ -45,7 +45,7 @@ jobs:
           git clone https://boringssl.googlesource.com/boringssl
           cd boringssl
           git checkout $BORINGSSL_COMMIT
-          cmake -DCMAKE_BUILD_TYPE=Release -GNinja .
+          cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=1 -GNinja .
           ninja
       
       - name: Cache LSQUIC
@@ -74,7 +74,7 @@ jobs:
           git checkout $LSQUIC_COMMIT
           git submodule init
           git submodule update
-          cmake -DBORINGSSL_DIR=../boringssl .
+          cmake -DLSQUIC_SHARED_LIB=1 -DBORINGSSL_DIR=../boringssl .
           make
       
       # - name: Test LSQUIC
